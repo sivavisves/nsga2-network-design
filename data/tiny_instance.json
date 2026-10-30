@@ -1,0 +1,114 @@
+{
+  "schema_version": 2,
+  "seed": null,
+  "nodes": [
+    {
+      "id": "P1",
+      "kind": "plant",
+      "x": 0,
+      "y": 5,
+      "supply": 10
+    },
+    {
+      "id": "W1",
+      "kind": "warehouse",
+      "x": 4,
+      "y": 2,
+      "capacity": 10,
+      "fixed_cost": 10
+    },
+    {
+      "id": "W2",
+      "kind": "warehouse",
+      "x": 4,
+      "y": 8,
+      "capacity": 10,
+      "fixed_cost": 20
+    },
+    {
+      "id": "C1",
+      "kind": "customer",
+      "x": 10,
+      "y": 2,
+      "demand": 4
+    },
+    {
+      "id": "C2",
+      "kind": "customer",
+      "x": 10,
+      "y": 8,
+      "demand": 6
+    }
+  ],
+  "arcs": [
+    {
+      "id": "P1>W1",
+      "source": "P1",
+      "target": "W1",
+      "distance": 1,
+      "capacity": 10,
+      "cost": 1,
+      "fixed_cost": 1
+    },
+    {
+      "id": "P1>W2",
+      "source": "P1",
+      "target": "W2",
+      "distance": 1,
+      "capacity": 10,
+      "cost": 1,
+      "fixed_cost": 1
+    },
+    {
+      "id": "W1>C1",
+      "source": "W1",
+      "target": "C1",
+      "distance": 1,
+      "capacity": 10,
+      "cost": 1,
+      "fixed_cost": 1
+    },
+    {
+      "id": "W1>C2",
+      "source": "W1",
+      "target": "C2",
+      "distance": 1,
+      "capacity": 10,
+      "cost": 1,
+      "fixed_cost": 1
+    },
+    {
+      "id": "W2>C1",
+      "source": "W2",
+      "target": "C1",
+      "distance": 1,
+      "capacity": 10,
+      "cost": 1,
+      "fixed_cost": 1
+    },
+    {
+      "id": "W2>C2",
+      "source": "W2",
+      "target": "C2",
+      "distance": 1,
+      "capacity": 10,
+      "cost": 1,
+      "fixed_cost": 1
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "normal",
+      "name": "Normal operations",
+      "probability": 0.7
+    },
+    {
+      "id": "outage",
+      "name": "W1 outage",
+      "probability": 0.3,
+      "warehouse_availability": {
+        "W1": 0
+      }
+    }
+  ]
+}

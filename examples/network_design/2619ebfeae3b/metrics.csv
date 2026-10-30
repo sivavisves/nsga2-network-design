@@ -1,0 +1,2 @@
+design_id,method,cost,expected_unmet_demand,conditional_unmet_demand,conditional_unmet_percent,status,termination_condition,runtime,gap,lower_bound,upper_bound,has_incumbent
+2619ebfeae3b,epsilon,401456.7601631848,0.0,0.0,0.0,aborted,maxTimeLimit,8.116217832999993,0.08204188942442928,368520.4890371867,401456.7601631843,True

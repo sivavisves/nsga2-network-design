@@ -1,0 +1,20 @@
+name: Network design Python
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      MPLCONFIGDIR: /tmp/network-design-matplotlib
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -e '.[test]'
+      - run: pytest -q
+      - run: network-design --instance data/tiny_instance.json --output results/ci-tiny --time-limit 5 --grid 5
+      - uses: actions/upload-artifact@v4
+        with:
+          name: network-design-tiny
+          path: results/ci-tiny/
